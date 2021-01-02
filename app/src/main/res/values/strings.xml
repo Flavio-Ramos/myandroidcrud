@@ -17,4 +17,9 @@
     <string name="fragmento_preto">Fragmento Preto</string>
     <string name="fragmento_vermelho">Fragmento Vermelho</string>
     <string name="fragmento_azul">Fragemento Azul</string>
+
+    <!--Textos do layout Adicionar Clientes-->
+    <string name="novoCliente">Adicionar Novo Cliente</string>
+    <string name="termoDeUso">Termo de Uso</string>
+
 </resources>

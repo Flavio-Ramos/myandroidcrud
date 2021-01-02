@@ -7,16 +7,16 @@ public class ClienteDataModel {
 
     //2 -  Atributo um para um com os nomes dos campos
     public static final String ID = "id";//String
-    public static final String NOMECOMPLETO = "nomeCompleto";//String
-    public static final String TELEFONE = "telefone";//String
-    public static final String EMAIL = "email";//String
-    public static final String CEP = "cep";//String
-    public static final String LOGRADOURO = "logradouro";//String
-    public static final String NUMERO = "numero";//int
-    public static final String BAIRRO = "bairro";//String
-    public static final String CIDADE = "cidade";//String
-    public static final String ESTADO = "estado";//String
-    public static final String TERMO_DE_USO = "termoDeUso";//int
+    public static final String NOMECOMPLETO = "nomeCompleto";//text
+    public static final String TELEFONE = "telefone";//text
+    public static final String EMAIL = "email";//text
+    public static final String CEP = "cep";//integer
+    public static final String LOGRADOURO = "logradouro";//text
+    public static final String NUMERO = "numero";//text
+    public static final String BAIRRO = "bairro";//text
+    public static final String CIDADE = "cidade";//text
+    public static final String ESTADO = "estado";//text
+    public static final String TERMO_DE_USO = "termoDeUso";//integer
 
     //3 - Query para criar a tabela no banco de dados
     public static String queryCriarTabela = "";
