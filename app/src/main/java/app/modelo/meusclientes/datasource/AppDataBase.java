@@ -16,8 +16,8 @@ import app.modelo.meusclientes.model.Cliente;
 
 public class AppDataBase extends SQLiteOpenHelper {
 
-    private static final String DB_NAME = "App.db";
-    public static final int DB_VERSION =1;
+    private static final String DB_NAME = "MeusClientes.db";
+    public static final int DB_VERSION = 1;
 
     SQLiteDatabase db;
 
@@ -86,8 +86,16 @@ public class AppDataBase extends SQLiteOpenHelper {
             do {
                 objCliente = new Cliente();
                 objCliente.setId(cursor.getInt(cursor.getColumnIndex(ClienteDataModel.ID)));
-                objCliente.setNome(cursor.getString(cursor.getColumnIndex(ClienteDataModel.NOME)));
+                objCliente.setNomeCompleto(cursor.getString(cursor.getColumnIndex(ClienteDataModel.NOMECOMPLETO)));
+                objCliente.setTelefone(cursor.getString(cursor.getColumnIndex(ClienteDataModel.TELEFONE)));
                 objCliente.setEmail(cursor.getString(cursor.getColumnIndex(ClienteDataModel.EMAIL)));
+                objCliente.setCep(cursor.getString(cursor.getColumnIndex(ClienteDataModel.CEP)));
+                objCliente.setLogradouro(cursor.getString(cursor.getColumnIndex(ClienteDataModel.LOGRADOURO)));
+                objCliente.setNumero(cursor.getInt(cursor.getColumnIndex(ClienteDataModel.NUMERO)));
+                objCliente.setBairro(cursor.getString(cursor.getColumnIndex(ClienteDataModel.BAIRRO)));
+                objCliente.setCidade(cursor.getString(cursor.getColumnIndex(ClienteDataModel.CIDADE)));
+                objCliente.setEstado(cursor.getString(cursor.getColumnIndex(ClienteDataModel.ESTADO)));
+                objCliente.setTermoDeUso(cursor.getInt(cursor.getColumnIndex(ClienteDataModel.TERMO_DE_USO)));
 
                 clienteList.add(objCliente);
             }while(cursor.moveToNext());

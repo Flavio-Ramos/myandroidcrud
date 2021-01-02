@@ -2,8 +2,16 @@ package app.modelo.meusclientes.model;
 
 public class Cliente {
     private  int id;
-    private String nome;
+    private String nomeCompleto;
+    private String telefone;
     private String email;
+    private String cep;
+    private String logradouro;
+    private int numero;
+    private String bairro;
+    private String cidade;
+    private String estado;
+    private int termoDeUso;
 
     public int getId() {
         return id;
@@ -13,12 +21,20 @@ public class Cliente {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getNomeCompleto() {
+        return nomeCompleto;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNomeCompleto(String nomeCompleto) {
+        this.nomeCompleto = nomeCompleto;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
     }
 
     public String getEmail() {
@@ -29,4 +45,59 @@ public class Cliente {
         this.email = email;
     }
 
+    public String getCep() {
+        return cep;
+    }
+
+    public void setCep(String cep) {
+        this.cep = cep;
+    }
+
+    public String getLogradouro() {
+        return logradouro;
+    }
+
+    public void setLogradouro(String logradouro) {
+        this.logradouro = logradouro;
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
+    public String getBairro() {
+        return bairro;
+    }
+
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public int getTermoDeUso() {
+        return termoDeUso;
+    }
+
+    public void setTermoDeUso(int termoDeUso) {
+        this.termoDeUso = termoDeUso;
+    }
 }
