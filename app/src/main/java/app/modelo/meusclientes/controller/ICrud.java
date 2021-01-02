@@ -1,12 +1,14 @@
 package app.modelo.meusclientes.controller;
 
-public interface ICrud {
+import java.util.List;
 
-    public void incluir();
+public interface ICrud<T>{
 
-    public  void alterar();
+    public boolean incluir(T obj);
 
-    public  void deletar();
+    public  boolean alterar(T obj);
 
-    public  void listar();
+    public  boolean deletar(T obj);
+
+    public List<T> listar();
 }

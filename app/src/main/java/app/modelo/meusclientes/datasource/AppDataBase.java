@@ -1,16 +1,22 @@
 package app.modelo.meusclientes.datasource;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import app.modelo.meusclientes.api.AppUtil;
 import app.modelo.meusclientes.datamodel.ClienteDataModel;
+import app.modelo.meusclientes.model.Cliente;
 
 public class AppDataBase extends SQLiteOpenHelper {
 
-    public static final String DB_NAME = "MeusClientes.sqlite";
+    private static final String DB_NAME = "App.db";
     public static final int DB_VERSION =1;
 
     SQLiteDatabase db;
@@ -21,18 +27,71 @@ public class AppDataBase extends SQLiteOpenHelper {
         Log.i(AppUtil.TAG, "AppDataBase: Criando banco de dados");
 
         db = getWritableDatabase();
-        Log.i(AppUtil.TAG, "AppDataBase: Criando banco de dados2");
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(ClienteDataModel.criarTabela());
-
         Log.d(AppUtil.TAG, "onCreate: tabela cliente criada" + ClienteDataModel.criarTabela());
-    }
+
+       }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
+    }
+
+    public boolean insert(String Tabela, ContentValues obj){
+        db = getWritableDatabase();
+        boolean retorno = false;
+        try{
+            retorno = db.insert(Tabela,null,obj) > 0;
+        }catch(Exception e){
+            Log.i(AppUtil.TAG, "insert: " + e.getMessage());
+        }
+        return retorno;
+    }
+
+    public boolean update(String Tabela, ContentValues dados){
+        db = getWritableDatabase();
+        boolean retorno = false;
+        try {
+            retorno = db.update(Tabela,dados,"id=?",new String[] {String.valueOf(dados.get("id"))}) > 0;
+        }catch(Exception e){
+            Log.d(AppUtil.TAG, "update: "+e.getMessage());
+        }
+        return retorno;
+    }
+
+    public boolean delete(String Tabela,ContentValues dados){
+        db = getWritableDatabase();
+        boolean retorno = false;
+        try{
+            retorno = db.delete(Tabela,"id=?",new String[] {String.valueOf(dados.get("id"))}) > 0;
+        }catch(Exception e){
+            Log.i(AppUtil.TAG, "delete: "+e.getMessage());
+        }
+        return retorno;
+    }
+
+    public List<Cliente> getAllClientes(String Tabela){
+        db = getReadableDatabase();
+        Cliente objCliente;
+        List<Cliente> clienteList = new ArrayList<>();
+        String sql = "Select * from " + Tabela;
+        Cursor cursor;
+        cursor = db.rawQuery(sql,null);
+
+        if(cursor.moveToFirst()){
+            do {
+                objCliente = new Cliente();
+                objCliente.setId(cursor.getInt(cursor.getColumnIndex(ClienteDataModel.ID)));
+                objCliente.setNome(cursor.getString(cursor.getColumnIndex(ClienteDataModel.NOME)));
+                objCliente.setEmail(cursor.getString(cursor.getColumnIndex(ClienteDataModel.EMAIL)));
+
+                clienteList.add(objCliente);
+            }while(cursor.moveToNext());
+        }
+        return clienteList;
     }
 }
