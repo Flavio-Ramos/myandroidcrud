@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Meus Clientes</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Cliente</string>
+    <string name="nav_header_subtitle">Aluno: Luiz Flávio</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+    <!--opções do menu principal drawbel-->
+    <string name="action_settings">Sair</string>
+    <string name="action_perfil">Meu Perfil</string>
+
+
+    <string name="modelo_fragment">App Cliente Vip</string>
+
+    <!--opçõe do menu lateral do drawble-->
+    <string name="fragmento_preto">Fragmento Preto</string>
+    <string name="fragmento_vermelho">Fragmento Vermelho</string>
+    <string name="fragmento_azul">Fragemento Azul</string>
+</resources>
