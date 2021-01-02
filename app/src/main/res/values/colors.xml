@@ -7,4 +7,8 @@
     <color name="vermelho">#E62214</color>
     <color name="preto">#0C0C0C</color>
     <color name="azul">#07487C</color>
+
+    <!--Cores dos campos Adicionar Clientes-->
+    <color name="camposAdicionarClientes">#E4DACD</color>
+
 </resources>

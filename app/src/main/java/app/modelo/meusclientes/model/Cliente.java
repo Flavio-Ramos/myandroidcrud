@@ -11,7 +11,7 @@ public class Cliente {
     private String bairro;
     private String cidade;
     private String estado;
-    private int termoDeUso;
+    private boolean termoDeUso;
 
     public int getId() {
         return id;
@@ -89,15 +89,17 @@ public class Cliente {
         return estado;
     }
 
+    public boolean isTermoDeUso() {
+        return termoDeUso;
+    }
+
+    public void setTermoDeUso(boolean termoDeUso) {
+        this.termoDeUso = termoDeUso;
+    }
+
     public void setEstado(String estado) {
         this.estado = estado;
     }
 
-    public int getTermoDeUso() {
-        return termoDeUso;
-    }
 
-    public void setTermoDeUso(int termoDeUso) {
-        this.termoDeUso = termoDeUso;
-    }
 }

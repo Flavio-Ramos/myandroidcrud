@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity
     MenuItem nav_preto;
     MenuItem nav_vermelho;
     MenuItem nav_azul;
+    MenuItem nav_adicionar_clientes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -158,6 +159,24 @@ public class MainActivity extends AppCompatActivity
 
             fragmentManager.beginTransaction().replace(R.id.content_fragment, new ModeloAzulFragment()).commit();
 
+        } else if(id == R.id.nav_adicionar_cliente){
+
+            menu = navigationView.getMenu();
+
+            nav_adicionar_clientes = menu.findItem(R.id.nav_adicionar_cliente);
+            nav_adicionar_clientes.setTitle("Adicionar Clientes Ativado");
+
+            nav_preto = menu.findItem(R.id.nav_preto);
+            nav_preto.setTitle("Preto");
+
+            nav_vermelho = menu.findItem(R.id.nav_vermelho);
+            nav_vermelho.setTitle("Vermelho");
+
+            nav_azul = menu.findItem(R.id.nav_azul);
+            nav_azul.setTitle("Azul");
+
+            navigationView.setItemTextColor(ColorStateList.valueOf(Color.BLACK));
+            fragmentManager.beginTransaction().replace(R.id.content_fragment,new ModeloAdicionarClientesFragment()).commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
