@@ -29,9 +29,9 @@ public class ClienteDataModel {
         queryCriarTabela += NOMECOMPLETO + " text, ";
         queryCriarTabela += TELEFONE + " text, ";
         queryCriarTabela += EMAIL + " text, ";
-        queryCriarTabela += CEP + " text, ";
+        queryCriarTabela += CEP + " integer, ";
         queryCriarTabela += LOGRADOURO + " text, ";
-        queryCriarTabela += NUMERO + " integer, ";
+        queryCriarTabela += NUMERO + " text, ";
         queryCriarTabela += BAIRRO + " text, ";
         queryCriarTabela += CIDADE + " text, ";
         queryCriarTabela += ESTADO + " text, ";

@@ -5,9 +5,9 @@ public class Cliente {
     private String nomeCompleto;
     private String telefone;
     private String email;
-    private String cep;
+    private int cep;
     private String logradouro;
-    private int numero;
+    private String numero;
     private String bairro;
     private String cidade;
     private String estado;
@@ -45,11 +45,11 @@ public class Cliente {
         this.email = email;
     }
 
-    public String getCep() {
+    public int getCep() {
         return cep;
     }
 
-    public void setCep(String cep) {
+    public void setCep(int cep) {
         this.cep = cep;
     }
 
@@ -61,11 +61,11 @@ public class Cliente {
         this.logradouro = logradouro;
     }
 
-    public int getNumero() {
+    public String getNumero() {
         return numero;
     }
 
-    public void setNumero(int numero) {
+    public void setNumero(String numero) {
         this.numero = numero;
     }
 
